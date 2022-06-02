@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, mul, div
 
 if __name__ == "__main__":
+    from calculator_1 import add, sub, mul, div
     a,b = 10,5
     print(f"{a} + {b} = {add(a,b)}")
     print(f"{a} - {b} = {sub(a,b)}")
