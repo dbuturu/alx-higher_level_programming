@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 from sys import argv
 
 if __name__ == '__main__':
@@ -13,7 +12,7 @@ if __name__ == '__main__':
     else:
         amount += ":"
 
-    print("{:d} {:s}".format(len(argv) - 1 , amount))
+    print("{:d} {:s}".format(len(argv) - 1, amount))
 
     for i in range(1, len(argv)):
         print("{:d}: {:s}".format(i, argv[i]))
