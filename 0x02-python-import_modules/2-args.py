@@ -12,9 +12,9 @@ if __name__ == "__main__":
     else:
         amount += ":"
 
-    print(f"{len(argv) -1} {amount}")
+    print(f"{len(argv) -1:d} {amount:s}")
     
     for i, arg in enumerate(argv):
         if i == 0:
             continue
-        print(f"{i}: {arg}")
+        print(f"{i:d}: {arg:s}")
