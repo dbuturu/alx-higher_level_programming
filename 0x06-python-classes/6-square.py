@@ -24,14 +24,20 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-    def my_print(self):
+    def shape(self):
+        square = []
         if self.__size == 0:
-            print("")
-        [print("") for y in range(0, self.__position[1])]
+            return ""
+        [square.append("\n") for y in range(0, self.__position[1])]
         for y in range(self.__size):
-            [print(" ", end="") for x1 in range(0, self.__position[0])]
-            [print("#", end="") for x2 in range(0, self.__size)]
-            print("")
+            [square.append(" ") for x1 in range(0, self.__position[0])]
+            [square.append("#") for x2 in range(0, self.__size)]
+            square.append("\n")
+        square.pop(-1)
+        return ''.join(square)
+
+    def my_print(self):
+        print(self.shape())
 
     @property
     def position(self):
