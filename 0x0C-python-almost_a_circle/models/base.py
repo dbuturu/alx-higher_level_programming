@@ -200,4 +200,3 @@ class Base:
             turtle.right(90)
 
         turtle.getscreen()._root.mainloop()
-
