@@ -82,7 +82,44 @@ class Rectangle(Base):
                 for i in range(self.__height)))
 
     def __str__(self):
-        """"""
-        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
-            self.id, self.__x, self.__y, self.__width, self.__height
+        """str function"""
+        return "[{}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+            self.__class__.__name__, self.id, self.__x, self.__y,
+            self.__width, self.__height
         )
+
+    def update(self, *args, **kwargs):
+        """update function"""
+        if len(args):
+            for i, a in enumerate(args):
+                if i == 0:
+                    self.id = a
+                elif i == 1:
+                    self.width = a
+                elif i == 2:
+                    self.height = a
+                elif i == 3:
+                    self.x = a
+                elif i == 4:
+                    self.y = a
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """dictionary representation of a Rectangle"""
+        dictionary = {}
+        dictionary["id"] = self.id
+        dictionary["width"] = self.width
+        dictionary["height"] = self.height
+        dictionary["x"] = self.x
+        dictionary["y"] = self.y
+        return dictionary
